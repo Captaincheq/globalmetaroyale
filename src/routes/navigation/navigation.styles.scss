@@ -1,0 +1,33 @@
+.navigation {
+    height: 70px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    box-shadow: 0.1px 2.98256px 7.4564px rgba(0, 0, 0, 1);
+      background: linear-gradient(
+    to left,
+    rgb(232, 196, 36) 0%,
+    rgb(73, 14, 53)
+  );
+  
+    .logo-container {
+      height: 100%;
+      width: 70px;
+      padding: 0;
+    }
+  
+    .nav-links-container {
+      width: 50%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+  
+      .nav-link {
+        padding: 10px 15px;
+        cursor: pointer;
+      }
+    }
+  }
+  
