@@ -1,0 +1,22 @@
+.main--photo {
+    width: 85vw;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap:20px;
+    
+}
+
+.section--main {
+    display: flex;
+    flex-direction: column;
+    background-color: darkgoldenrod;
+    border-radius: 5px;   
+    transform: translate(0);
+    transition: tranform 0.25s ease-out;
+    cursor: pointer;
+}
+
+.section--main.hover {
+    transform: scale(1.05);
+}
