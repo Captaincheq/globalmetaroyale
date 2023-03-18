@@ -5,6 +5,10 @@
 body {
     margin: auto;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: #795d0b;
+    color: #111111;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	padding: 20px; 
 }
 
 .header {

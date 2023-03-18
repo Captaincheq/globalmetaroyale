@@ -1,16 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Main from "../../components/home/Main";
+import Aboutus from "../../components/about-us/Aboutus";
 import Footer from "../../components/footer/Footer";
 import { Outlet } from "react-router-dom";
+import ErrorBoundary from "../../components/errorBountary/Errorboundary";
 
 export default function About() {
     return (
         <div className="container">
+        <ErrorBoundary fallback="There was an error in About Us!">
         <Outlet />
-        <h1> About Us</h1>
-            <Main/>
+            <Aboutus/>
             <Footer/>
+        </ErrorBoundary>
         </div>
     );
 }

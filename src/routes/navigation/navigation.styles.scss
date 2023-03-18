@@ -1,3 +1,17 @@
+
+.navigation .nav-btn {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: rgb(100, 6, 100);
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+}
+
+
 .navigation {
     height: 70px;
     width: 100%;
@@ -10,20 +24,28 @@
     rgb(232, 196, 36) 0%,
     rgb(73, 14, 53)
   );
-  
+
     .logo-container {
       height: 100%;
       width: 70px;
       padding: 0;
     }
   
-    .nav-links-container {
-      width: 50%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
+ .nav-links-container {
   
+      position: relative;
+      top: 20px;
+      left: 20%;
+      width: 50%;
+      height: 50%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+
+
+
       .nav-link {
         padding: 10px 15px;
         cursor: pointer;
@@ -31,3 +53,44 @@
     }
   }
   
+
+@media only screen and (max-width:1000px) {
+  .navigation .nav-btn{
+    visibility: visible;
+    opacity: 1;
+  }  
+
+  .navigation .nav-links-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    background-color: rgb(64, 1, 64);
+    transition: 1s;
+    transform: translateY(-100vh);
+  }
+
+  .navigation .responsive_nav{
+    transform:none;
+  }
+
+  .navigation .nav-close-btn{
+    position: absolute;
+    color: goldenrod;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .navigation a{
+    font-size: 1.5rem;
+  }
+  .navigation a:hover{
+    color: goldenrod;
+  }
+}
