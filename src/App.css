@@ -1,16 +1,71 @@
-.App {
-  text-align: center;
-}
-.center {
-  display: flex;
-  justify-content: center;
-}
 
-.particles {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-}
+:root {
+    --gradient-text:linear-gradient()
+    --gradient-bar: linear-gradient()
+  
+    --color-footer: ;
+    --color-blog: ;
+    --color-text: #333;
+    --color-subtext: #CD9A0F;
+    --background-front: #f5f5f5;
+    --color-bg: #e5e5e5;
+    --font-family:  monospace,Courier,'Courier New';
+    --button:#BBBFCA;
+    --button-hover:#CD9A0F;
+    --font-family-min: 'Roboto';
+
+  }
+  
+  .section__padding {
+    padding: 4rem 6rem;
+  }
+  
+  .section__padding {
+    margin: 4rem 6rem;
+  }
+  
+  .scale-up-center {
+      -webkit-animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+              animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+  }
+
+   @-webkit-keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  @keyframes scale-up-center {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+    }
+  }
+  
+  @media screen and (max-width: 700px){
+    .section__padding {
+      padding: 4rem;
+    }
+    .section__margin {
+      padding: 4rem;
+    }
+    
+  }
+  
+  @media screen and (max-width: 550px){
+    .section__padding {
+      padding: 4rem 2rem;
+    }
+    .section__margin {
+      padding: 4rem 2rem;
+    }
+    
+  }

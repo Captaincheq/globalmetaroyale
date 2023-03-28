@@ -17,19 +17,32 @@ export default function RequirementsForm() {
             favColor: "",
             favMusic: "",
             date: "",
-            gender: ""
+            gender: "",
+            langauges: [],
            
         }
     )
 
     function handleChange(event) {
         const {name,number, value,type,checked} = event.target
+
+        
+        if(event.target.name === 'languages'){
+            let copy = { ...formData}
+
+            if(event.target.checked) {
+                copy.langauges.push(event.target.value)
+            } else {
+                copy.languages = copy.langauges.filter(el => el !== event.target.value)
+            }
+            setformData(copy)
+        }
         setformData(prevFormData => {
             return {
                 ...prevFormData,
                 [name]: type === "checkbox" ? checked : value
             }
-        })
+        }) 
     }
 
     function handleSubmit(event) {
@@ -193,6 +206,36 @@ export default function RequirementsForm() {
             <label htmlFor="other">Other</label>
             <br/>          
         </fieldset>
+
+        <input 
+            type={"checkbox"} 
+            id="dancer"
+            //checked={formData.languages}
+            onChange={handleChange}
+            name="languages"
+            value="dancer"
+        />
+        <label htmlFor="dancer">Are you a dancer?</label>   
+        <input 
+            type={"checkbox"} 
+            id="singer"
+            //checked={formData.langauges}
+            onChange={handleChange}
+            name="languages"
+            value="singer"
+        />
+        <label htmlFor="singer">Are you a singer?</label>  
+        <input 
+            type={"checkbox"} 
+            id="cooker"
+            //checked={formData.langauges}
+            onChange={handleChange}
+            name="languages"
+            value="cooker"
+        />
+        <label htmlFor="cooker">Are you a cooker?</label>  
+
+
         <br/>
 
             <label htmlFor="favColor">What is your favorite color?</label>
