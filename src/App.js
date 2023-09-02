@@ -7,8 +7,10 @@ import Requirements from "./routes/requirements/requirements.route";
 import Contact from "./routes/contact/contact.route";
 import Services from "./routes/services/services.route";
 import Gallery from "./routes/gallery/gallery.route";
+import RequirementsInfo from "./routes/requirementsInfo/requirementsInfo.route";
 import './App.css'
 import Blog from "./routes/blog/blog.route";
+import Privacy from "./routes/privacy/Privacy";
 
 const App = () => {
     return (
@@ -20,8 +22,10 @@ const App = () => {
                 <Route path="Gallery" element={<Gallery />} />
                 <Route path="About" element={<About />} />
                 <Route path="Requirements" element={<Requirements />} />
+                <Route path="RequirementsInfo" element={<RequirementsInfo />} />
                 <Route path="Blog" element={<Blog />} />
                 <Route path="Contact" element={<Contact />} />
+                <Route path="Privacy" element={<Privacy />} />
             </Route>
         </Routes>
     );

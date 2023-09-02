@@ -1,3 +1,15 @@
+.homepage {
+  display: flex;
+  flex-direction: column;
+  margin-top: 8.4rem;
+
+}
+
+.homepage img {
+  width: 100%;
+  height: 69rem;
+}
+
 .main {
     display: flex;
 }
@@ -13,8 +25,9 @@
 
 .main__content h1 {
     font-family:var(--font-family);
-    font-weight: 800;
-    font-size: 62px;
+    color: var(--color-shady);
+    font-weight: 400;
+    font-size: 25px;
     line-height:75px;
     letter-spacing: -0.04rem;
 }
@@ -34,10 +47,54 @@
 .main__content__people {
     width: 100%;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-top: 2rem;
 }
+    .rlink {
+        border-radius: 1rem;
+        font-size: 2rem;
+        font-weight: 800;
+        
+            --c: #1095c1; /* the color */
+            --b: .15em;    /* border length*/
+            --d: 10px;    /* the cube depth */
+            
+            --_s: calc(var(--d) + var(--b));
+            
+            color: var(--c);
+            border: solid #0000;
+            border-width: var(--b) var(--b) var(--_s) var(--_s);
+            background:
+              conic-gradient(at left var(--d)  bottom var(--d),
+                #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+              conic-gradient(at left var(--_s) bottom var(--_s),
+                #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+            transform: translate(calc(var(--d)/-1),var(--d));
+            clip-path: 
+              polygon(
+               var(--d) 0%, 
+               var(--d) 0%, 
+               100% 0%, 
+               100% calc(100% - var(--d)),
+               100% calc(100% - var(--d)),
+               var(--d) calc(100% - var(--d))
+              );
+            transition: 0.5s;
+          }
+          .rlink:hover {
+            transform: translate(0,0);
+            clip-path: 
+              polygon(
+               0% var(--d), 
+               var(--d) 0%, 
+               100% 0%, 
+               100% calc(100% - var(--d)), 
+               calc(100% - var(--d)) 100%, 
+               0% 100%
+             );
+          }
+
 
 .main__content__people img {
     width: 100px;
@@ -62,7 +119,7 @@
 } 
 .main__img img {
     width: 100%;
-    height: 100%;
+    height: 90%;
 }
 
 
@@ -95,15 +152,15 @@
         }
     }
 
-    @media only screen and (max-width:650px) {
+    @media only screen and (max-width:550px) {
         .main h1{
-            font-size: 36px;
-            line-height: 48px;
+            font-size: 3rem;
+            line-height: 4rem;
           } 
           
           .main p{
-              font-size: 14px;
-              line-height: 24px;
+              font-size: 1rem;
+              line-height: 2rem;
             }
     }
 

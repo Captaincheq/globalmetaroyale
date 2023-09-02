@@ -1,57 +1,78 @@
-import { Link, Outlet } from "react-router-dom";
+import { NavLink, Outlet } from "react-router-dom";
 import ErrorBoundary from "../../components/errorBountary/Errorboundary";
-import {FaBars, FaTimes} from "react-icons/fa";
-import { Fragment, useRef } from "react";
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Fragment, useRef, useState, useEffect } from "react";
 import { ReactComponent as Logo } from "../navigation/Logo.svg";
-import  './navigation.styles.scss';
+import "./navigation.styles.scss";
 
 export default function Navigation() {
+  const [isSticky, setIsSticky] = useState(false);
+  const navRef = useRef();
 
-    const navRef = useRef();
+  const showNavbar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
 
-    const showNavbar = () => {
-        navRef.current.classList.toggle("responsive_nav");
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      setIsSticky(true);
+    } else {
+      setIsSticky(false);
     }
+  };
 
-    return (
+  return (
     <Fragment>
-        <div className="navigation ">
-            <ErrorBoundary fallback="There was an error in Header!">
-            <Link className="logo-container" to='/'>
-                <Logo className="logo"/>
-            </Link>
-            <div className="nav-links-container" ref={navRef}>
-                <Link className="nav-link" to='/Home' >
+      {/*<nav className={isSticky ? "sticky" : ""}> */}
+        <div className="navigation" >
+          <ErrorBoundary fallback="There was an error in Header!">
+          <div className="nav-logo">
+              <NavLink className="logo-container" to="/">
+                <Logo className="logo" />
+              </NavLink>
+          </div>
+            
+          <div className="nav-links-container" ref={navRef}>
+              <NavLink className="nav-link" to="/Home">
                 Home
-                </Link>
-                <Link className="nav-link" to='/Requirements' >
+              </NavLink>
+              <NavLink className="nav-link" to="/requirementsInfo" >
                 Requirements
-                </Link>
-                <Link className="nav-link" to='/Gallery' >
+              </NavLink>
+                
+              <NavLink className="nav-link" to="/Gallery" >
                 Gallery
-                </Link>
-                <Link className="nav-link" to='/About' >
+              </NavLink>
+              <NavLink className="nav-link" to="/About" >
                 AboutUs
-                </Link>
-                <Link className="nav-link" to='/Services' >
+              </NavLink>
+              <NavLink className="nav-link" to="/Services">
                 Services
-                </Link>
-                <Link className="nav-link" to='/Blog' >
+              </NavLink>
+              <NavLink className="nav-link" to="/Blog">
                 Blog
-                </Link>
-                <Link className="nav-link" to='/Contact' >
+              </NavLink>
+              <NavLink className="nav-link" to="/Contact" >
                 Contact
-                </Link>
-                <button className="nav-btn nav-close-btn" onClick={showNavbar}>
-                    <FaTimes/>
-                </button>
+              </NavLink>
+              <button className="nav-btn nav-close-btn" onClick={showNavbar}>
+                <FaTimes />
+              </button>
             </div>
             <button className="nav-btn" onClick={showNavbar}>
-                <FaBars/>
+              <FaBars />
             </button>
-        </ErrorBoundary>   
+          </ErrorBoundary>
         </div>
-        <Outlet/>
-    </Fragment> 
-    )
+        <Outlet />
+  {/*</nav> */}
+    </Fragment>
+  );
 }

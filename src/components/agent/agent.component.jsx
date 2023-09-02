@@ -6,11 +6,14 @@ import './agent.styles.scss';
 export default function Agent() {
     const {agents} = useContext(AgentsContext);
 return (
-    <div className="agent-container">
-    {agents.map((agent) => (
-        <AgentCard key={agent.id} agent={agent}/>
-    ))}
+    <div className="agent">
+        <h1>Images</h1>
+        <div className="agent-container">
+        
+        {agents.map((agent) => (
+            <AgentCard key={agent.id} agent={agent}/>
+        ))}
+        </div>
     </div>
-)
-
-}
+   
+)}

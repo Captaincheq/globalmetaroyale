@@ -12,12 +12,13 @@
 .footer-heading {
   width: 100%;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-heading h1{
   font-family: var(--font-family);
-  font-size: 62px;
+  color: var(--color-text);
+  font-size: 50px;
   font-weight: 800;
   line-height: 75px;
   text-align: center;
@@ -28,22 +29,53 @@
   display: flex;
   justify-content: center;
   padding: 1rem;
-   /*border: 1px solid black; */
   text-align: center;
-  background: var(--button);
   border-radius: 4rem;
-  margin-bottom: 10rem;
+  margin-bottom: 2rem;
   cursor:pointer;
-}
 
-.footer-button:hover
-{ 
-background-color: var(--button-hover);
-}
+    --c: #1095c1; /* the color */
+    --b: .1em;    /* border length*/
+    --d: 20px;    /* the cube depth */
+    
+    --_s: calc(var(--d) + var(--b));
+    
+    color: var(--c);
+    border: solid #0000;
+    border-width: var(--b) var(--b) var(--_s) var(--_s);
+    background:
+      conic-gradient(at left var(--d)  bottom var(--d),
+        #0000 90deg, rgb(255 255 255 /0.3) 0 225deg,rgb(255 255 255 /0.6) 0) border-box,
+      conic-gradient(at left var(--_s) bottom var(--_s),
+        #0000 90deg,var(--c) 0) 0 100%/calc(100% - var(--b)) calc(100% - var(--b))  border-box;
+    transform: translate(calc(var(--d)/-1),var(--d));
+    clip-path: 
+      polygon(
+       var(--d) 0%, 
+       var(--d) 0%, 
+       100% 0%, 
+       100% calc(100% - var(--d)),
+       100% calc(100% - var(--d)),
+       var(--d) calc(100% - var(--d))
+      );
+    transition: 0.5s;
+  }
+  .footer-button:hover {
+    transform: translate(0,0);
+    clip-path: 
+      polygon(
+       0% var(--d), 
+       var(--d) 0%, 
+       100% 0%, 
+       100% calc(100% - var(--d)), 
+       calc(100% - var(--d)) 100%, 
+       0% 100%
+     );
+  }
 
 .footer-button p{
   box-sizing: border-box;
-  font-family: var(--font-family);
+  font-family: var(--color-shady);
   font-size: 18px;
   line-height: 21px;
   word-spacing: 2px;
@@ -91,7 +123,11 @@ background-color: var(--button-hover);
 }
 
 .footer-links-div h4{
+  text-transform: uppercase;
   font-family: var(--font-family);
+  color: var(--color-text);
+  letter-spacing: 0.4rem;
+  font-weight: 400;
   font-size: 14px;
   line-height: 16px;
   margin-bottom: 1rem;
@@ -99,6 +135,7 @@ background-color: var(--button-hover);
 
 .footer-links-div p{
   font-family: var(--font-family);
+  color: var(--color-shady);
   font-size: 12px;
   line-height: 14px;
   margin: 0.5rem 0;
@@ -106,20 +143,21 @@ background-color: var(--button-hover);
 }
 
 .footer-copyright {
+  background-color: var(--color-bg);
   margin-top: 2rem;
   text-align: center;
   width: 100%;
 }
 
 .footer-copyright p{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: var(--color-shady);
   font-size: 12px;
-  line-height: 14px;
-  margin-bottom: 2rem;
+  margin: 2rem 0 2rem 0;
 }
 
 @media  screen and  (max-width: 850px) {
   .footer-heading h1 {
+    color: var(--color-text);
     font-size: 44px;
     line-height: 50px;
   } 
@@ -127,6 +165,7 @@ background-color: var(--button-hover);
 
 @media  screen and  (max-width: 550px) {
   .footer-heading h1 {
+    color: var(--color-text);
     font-size: 34px;
     line-height: 42px;
   } 
@@ -143,6 +182,7 @@ background-color: var(--button-hover);
 
 @media  screen and  (max-width: 550px) {
   .footer-heading h1 {
+    color: var(--color-text);
     font-size: 27px;
     line-height: 38px;
   }

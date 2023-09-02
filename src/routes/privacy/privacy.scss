@@ -1,0 +1,22 @@
+.privacy{
+    margin: 9rem 6rem;
+    background-color: var(--background-shady);
+    //--margin: 2rem;
+    color: var(--color-shady);
+
+    .company-name{
+        justify-content: center;
+        align-items: center;
+
+        h1{
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        p{
+            font-style: 1.2rem;
+        }
+    }
+
+
+}

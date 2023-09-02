@@ -2,7 +2,8 @@
 :root {
     --gradient-text:linear-gradient()
     --gradient-bar: linear-gradient()
-  
+
+    {/*Main Colors}
     --color-footer: ;
     --color-blog: ;
     --color-text: #333;
@@ -13,6 +14,27 @@
     --button:#BBBFCA;
     --button-hover:#CD9A0F;
     --font-family-min: 'Roboto';
+    --main-color:white;
+        --font-family:  monospace,Courier,'Courier New';
+
+
+       --background-shady:#1a1e25;
+       --color-bg: #0c0f16;
+    */}
+
+    --color-blog: ;
+    --color-text: #f8f9fa;
+    --color-subtext: #00A9A5;
+    --background-front: #11141B;
+    --background-shady: #1a1e25;
+    --color-bg: #0c0f16;
+    --font-family: 'Barlow Condensed',Poppins, sans-serif;
+    --color-shady:#999;
+    --button-hover:goldenrod;
+    --font-family-min: 'Roboto';
+    --color-light:#C8C8C8;
+    --purple: #6f42c1;
+
 
   }
   

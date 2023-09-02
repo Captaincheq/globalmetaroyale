@@ -8,7 +8,7 @@ export default function Ourblog() {
         <div>
             <div className="blog">
                 <div className="blog-heading">
-                    <h1 className=" gradient-text"> A lot is happending, We are blogging about it.</h1>
+                    <h1> A lot is happending, We are blogging about it.</h1>
                 </div>
                 <div className="blog-container">
                     <div className="blog-container-groupA">

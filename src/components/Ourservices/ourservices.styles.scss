@@ -1,120 +1,189 @@
-
 .services-container {
-  display: flex;
-  flex-direction: row;
-  margin: 2rem;
-}
-
-  .services-info-video {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-  
-    margin-right: 2rem;
+    margin: 2rem;
+    margin-top: 7rem;
 
-  }
-
-  .services-info-video video{
-    width: 100%;
-    height: 100%;
-  }
-
-  .services-video-p {
-    font-family: var(--font-family-min);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 25px;
-  }
-
-.services-info-video h1{
-  font-family: var(--font-family);
-  font-size: 62px;
-  font-weight: 800;
-  line-height: 75px;
-  text-align: center;
-  letter-spacing: -0.04rem;
-}
-
-.services-content p{
-  box-sizing: border-box;
-  font-family: var(--font-family-min);
-  font-size: 18px;
-  line-height: 21px;
-  word-spacing: 2px;
-  margin-bottom: 2rem 0 2rem 0;
-}
-
- .services-location div{
-  display: flex;
-  background-color: var(--background-front);
-  border-radius: 4rem;
-  margin: 0.5rem;
-
-
-  .services-link-btn {
-    align-items: center;
-    justify-content: center;
-    background: rgb(40, 8, 40);
-    border: black;
-    color: goldenrod;
-    font-size: 4rem;
-    border-radius: 50%;
-    width: 10rem;
-    height: 10rem;
-  }
-
-  .services-btn-p {
-    font-family: var(--font-family);
-    font-size: 12px;
-    line-height: 14px;
-    align-items: center;
-    padding: 40px;
-  }
-}
-
-
-@media  screen and  (max-width: 850px) {
-  .services-info-video h1 {
-    font-size: 44px;
-    line-height: 50px;
-  } 
-
-  .services-info-video video{
-    width: 100%;
-    height: 50%;
-  }
-
-  .services-content p{
-    font-size: 14px;
-    line-height: 20px;
-  }
-
-  .services-location div{
-    flex-direction: column;
-    align-items: center;
-    padding-top: 0.5rem;
-
-    .services-link-btn {
-      align-items: center;
-      justify-content: center;
-      background: rgb(40, 8, 40);
-      border: black;
-      color: goldenrod;
-      font-size: 2rem;
-      border-radius: 50%;
-      width: 5rem;
-      height: 5rem;
-
-
-    }
-      .services-btn-p {
-        font-size: 12px;
+    .services-info-video {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        padding: 5px;
-        padding: 1rem;
+        margin-right: 2rem;
+    
       }
-  }
 
-}
+      .ourservices{
+        display: flex;
+        color: var(--color-text);
+        align-items: center;
+        justify-content: center;
+        margin: 2rem 0 4rem 0;
+
+
+        .serviceslist{
+            position: relative;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-color: white;
+            background-color: var(--background-shady);
+            border-radius: 2rem;
+            width: 20rem;
+            height: 20rem;
+            margin: 2rem;
+
+            .moreinfo{
+                position: absolute;
+                display: flex;
+                align-items: flex-start;
+                top: 15rem;
+                right: 5rem;
+                color: whitesmoke;
+                cursor: pointer;
+                font-size: 4rem;
+                
+            }
+        }
+      }
+
+      .services-content {
+        box-sizing: border-box;
+        font-family: var(--font-family-min);
+        color: var(--color-text);
+        font-size: 18px;
+        line-height: 21px;
+        word-spacing: 2px;
+      
+        .services-content-p{
+          margin-bottom: 1.5rem;
+          background-color: var(--background-shady);
+        }
+      }
+      
+       .services-location div{
+        display: flex;
+        background-color: var(--background-shady);
+        color: var(--color-shady);
+        border-radius: 4rem;
+        margin: 0.5rem;
+      
+      
+        .services-link-btn {
+          align-items: center;
+          justify-content: center;
+          background: rgb(40, 8, 40);
+          border: black;
+          color: goldenrod;
+          font-size: 2rem;
+          border-radius: 50%;
+          width: 5rem;
+          height: 5rem;
+        }
+      
+        .services-btn-p {
+          font-family: var(--font-family);
+          background-color: var(--background-shady);
+          font-size: 12px;
+          line-height: 14px;
+          align-items: center;
+          padding: 2rem;
+        }
+      }
+
+
+      @media  screen and  (max-width: 850px) {
+        .services-info-video h1 {
+          font-size: 44px;
+          line-height: 50px;
+        } 
+      
+        .services-info-video video{
+          width: 100%;
+          height: 50%;
+        }
+      
+        .services-content p{
+          font-size: 14px;
+          line-height: 20px;
+        }
+      
+        .services-location div{
+          flex-direction: column;
+          align-items: center;
+          padding-top: 0.5rem;
+      
+          .services-link-btn {
+            align-items: center;
+            justify-content: center;
+            background: rgb(40, 8, 40);
+            border: black;
+            color: goldenrod;
+            font-size: 2rem;
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+      
+      
+          }
+            .services-btn-p {
+              font-size: 12px;
+              align-items: center;
+              padding: 5px;
+              padding: 1rem;
+            }
+        }
+      
+      }
+      
+      
+      @media  screen and  (max-width: 450px) {
+        .services-container {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem;
+        margin-top: 7rem;
+      }
+        .services-info-video h1 {
+          font-size: 44px;
+          line-height: 50px;
+        } 
+      
+        .services-info-video video{
+          width: 100%;
+          height: 50%;
+        }
+      
+        .services-content p{
+          font-size: 14px;
+          line-height: 20px;
+        }
+      
+        .services-location div{
+          flex-direction: column;
+          align-items: center;
+          padding-top: 0.5rem;
+      
+          .services-link-btn {
+            align-items: center;
+            justify-content: center;
+            background: rgb(40, 8, 40);
+            border: black;
+            color: goldenrod;
+            font-size: 2rem;
+            border-radius: 50%;
+            width: 5rem;
+            height: 5rem;
+      
+      
+          }
+            .services-btn-p {
+              font-size: 12px;
+              align-items: center;
+              padding: 5px;
+              padding: 1rem;
+            }
+        }
+    }
+  }

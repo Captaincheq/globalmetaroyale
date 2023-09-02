@@ -1,0 +1,369 @@
+.requirements {
+	background-color: var(--background-shady);
+	display: flex;
+	flex-direction: column;
+	margin-top: 8.3rem;	
+	align-items: center;
+	justify-content: center;
+	padding: 1rem;
+
+	h1{
+			font-family: var(--font-family);
+			color: var(--color-text);
+			font-size: 50px;
+			font-weight: 800;
+			line-height: 75px;
+			text-align: center;
+			letter-spacing: -0.04rem;
+	}
+
+	.requirements-form {
+		background-color: var(--color-bg);
+		color: var(--color-text);
+		border-radius: 1rem;
+		width: 50%;
+		height: 100%;
+		padding: 2rem;
+	    margin: 0 1.5rem;
+		box-shadow: 0 5px 10px var(--color-shady);
+
+		.job-select {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin: 0.5rem;
+			padding: 1rem;
+
+			.job-select-label {
+				font-family: var(--font-family);
+				font-size: 2rem;
+				font-weight: 500;
+			}
+
+			select {
+				cursor: pointer;
+			}
+		}
+
+		.personal-data {
+			justify-content: center;
+			align-items: center;
+			margin: 2rem;
+			border-radius: 1rem;
+			
+			.requirements-field {
+				align-items: center;
+
+				.input-field {
+					display: flex;
+					margin: 1rem 1.5rem;
+					//justify-content: space-between;
+					gap: 5rem;
+
+					label{
+						font-size: 2rem;
+						font-weight: 500;
+						color: var(--color-shady);
+					}
+
+					.input-email{
+						width: 9.7rem;
+					}
+
+					input{
+						outline: none;
+						border: 1px solid var(--color-shady);
+						font-size: 14px;
+						font-weight: 400;
+						width: 50%;
+					}
+				}
+				.contact-label{
+					display: flex;
+					margin: 1rem 1.5rem;
+					//justify-content: space-between;
+					gap: 1.3rem;
+
+					label{
+						font-size: 2rem;
+						font-weight: 500;
+						color: var(--color-shady);
+					}
+
+					input{
+						outline: none;
+						border: 1px solid var(--color-shady);
+						font-size: 14px;
+						font-weight: 400;
+						width: 50%;
+					}
+				}
+
+			}
+
+			.requirements-third-part {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				margin: 2rem;
+				gap: 3rem;
+
+				.input-field {
+					display: flex;
+					flex-direction: column;
+					margin: 4px 0;
+				}
+
+				label {
+					font-size: 12px;
+					font-weight: 500;
+					color: var(--color-shady);
+					margin: 0.5rem;
+				}
+
+			}
+
+			.requirements-forth-part{
+				display: flex;
+				flex-direction: column;
+				font-size: 2rem;
+				font-weight: 500;
+				color: var(--color-shady);
+				margin: 1rem;
+
+				.input-url{
+					display: flex;
+					flex-direction: column;
+					margin: 1rem;
+					gap: 1rem;
+				}
+
+				.input-field {
+					gap: 4rem;
+					margin: 1rem;
+
+					label{
+						margin: 2rem;
+					}
+				}
+
+			}
+
+			.add-info {
+				//box-shadow: 0 3px 6px var(--color-shady);
+				color: var(--color-shady);
+				margin: 2rem;
+				padding: 2rem;
+				font-size: 2rem;
+				font-weight: 500;
+
+				p{
+					color: var(--color-text);
+					margin: 1rem;
+				}
+
+				textarea {
+						display: flex;
+						flex-direction: column;
+						margin: 1rem auto;
+						resize:  vertical;
+						min-height: 7rem;
+						max-height:30rem;
+						width: 100%;
+				}
+				
+			}
+		}
+	}
+	button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 3.5rem;
+		width: 90%;
+		align-items: center;
+		font-size: 2rem;
+		font-weight: 800;
+		outline: none;
+		border: none;
+		border-radius: 5px;
+		margin: 2rem;
+		transition: all 0.3s linear;
+		cursor: pointer;
+		box-shadow: 0 3px 6px var(--color-shady);
+		background: var(--background-front);
+		color: var(--color-text);
+		box-shadow: inset -3px -3px 7px var(--button-hover),
+					inset 3px 3px 5px var(--purple); 
+		
+	}
+	.requirements-form button:hover {
+		
+		height: 4.5rem;
+		width: 90%;
+		color: var(--color-text);
+		background: var(--background-front);
+		box-shadow: inset -3px -3px 7px var(--button-hover),
+					inset 3px 3px 5px var(--purple); 
+		align-items: center;
+		cursor: pointer;   
+		
+	}
+
+	h2{
+		margin: 2rem;
+		color: var(--color-shady);
+
+		a{
+			color: var(--color-subtext);
+			cursor: pointer;
+		}
+	}
+}
+
+
+
+// @media  screen and  (max-width: 1000px) {
+// 	.personal-data .requirements-field .input-field {
+// 		width: calc(100%/3 - 15px);
+// 	}
+// }
+
+// @media  screen and  (max-width: 800px) {
+// 	.job-select-label {
+// 		font-size: 4rem;
+// 	}
+
+// 	.job-select select {
+// 		font-size: 5rem;
+// 	}
+// }
+
+// @media  screen and  (max-width: 700px) {
+// 	.job-select-label {
+// 		font-size: 3rem;
+// 	}
+
+// 	.job-select select {
+// 		font-size: 4rem;
+// 	}
+// }
+
+// @media  screen and  (max-width: 600px) {
+// 	.requirements-forth-part .input-field {
+// 		width: calc(100%/2 - 15px);
+// 	}
+// }
+
+
+// @media  screen and  (max-width: 550px) {
+// 	.job-select-label {
+// 		font-size: 2rem;
+// 	}
+
+// 	.job-select select {
+// 		font-size: 3rem;
+// 	}
+
+// 	.rt-btn {
+// 		width: 3rem;
+// 		font-size: 1rem;
+// 		padding: 0.1rem;
+// 	}
+// 	.rt-btn:hover {
+// 	outline: 0.1rem solid var(--c);
+//   	outline-offset: 0.5rem;
+//   	}
+
+// 	.personal-data .requirements-field .input-field {
+// 		width: calc(100%/2 - 15px);
+// 		display: flex;
+// 		flex-direction: column;
+// 		margin: 4px 0;
+// 	}
+// 	.requirements-forth-part .input-field {
+// 		width: calc(100%/1 - 15px);
+// 		display: flex;
+// 		flex-direction: column;
+// 		margin: 4px 0;
+// 	}
+// }
+
+// @media  screen and  (max-width: 400px) {
+// 	.job-select {
+// 		display: flex;
+// 		flex-direction: column;
+// 	}
+// 	.job-select-label {
+// 		font-size: 2rem;
+// 		margin-bottom: 1rem;
+// 	}
+
+// 	.job-select legend {
+// 		font-size: 3rem;
+// 		font-weight: 700;
+	
+// 	}
+
+// 		.rt-btn {
+// 		margin-top: 4.5rem;
+// 		width: 3rem;
+// 		font-size: 1rem;
+// 		padding: 0.1rem;
+// 	}
+// 	.rt-btn:hover {
+// 	outline: 0.1rem solid var(--c);
+//   	outline-offset: 0.5rem;
+//   	}
+
+
+
+// 	.personal-data legend {
+// 		font-size: 3rem;
+// 		font-weight: 700;
+// 	}
+
+// 	.personal-data .requirements-field .input-field {
+// 		width: calc(100%/1 - 15px);
+// 		display: flex;
+// 		flex-direction: column;
+// 		margin: 4px 0;
+// 	}
+// 	.requirements-forth-part .input-field {
+// 		width: calc(100%/1 - 15px);
+// 		display: flex;
+// 		flex-direction: column;
+// 		margin: 4px 0;
+// 	}
+// }
+
+
+// .rt-btn {
+// 	position: absolute;
+// 	z-index: 10;
+// 	  top: 11%;
+// 	  left: 2%;
+// 	border-radius: 1rem 3rem;
+// 	background-color: var(--color-subtext);
+// 	color: var(--color-bg);
+// 	padding: 1rem;
+// 	align-items: center;
+// 	text-align: center ;
+// 	--s: 5rem;   /* the size of the image */
+//   --b: .2rem;     /* the border thickness*/
+//   --g: 1rem;    /* the gap */
+//   --c: var(--color-shady); /* the color */
+  
+//   width: var(--s);
+//   aspect-ratio: 1;
+//   outline: calc(var(--s)/2) solid var(--color-shady);
+//   outline-offset: calc(var(--s)/-2);
+//   cursor: pointer;
+//   transition: 0.3s;
+//   }
+
+//   .rt-btn:hover {
+// 	outline: var(--b) solid var(--c);
+//   	outline-offset: var(--g);
+//   }

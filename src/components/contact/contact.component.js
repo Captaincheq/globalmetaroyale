@@ -1,16 +1,16 @@
 import React from "react";
-import {AiFillEnvironment } from "react-icons/ai";
-import {HiMail,HiPhone } from "react-icons/hi";
-import {FaGlobeAsia} from "react-icons/fa"
-import { useRef } from "react";
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './contact.component.styles.scss';
+import Button from "../button/button.component";
 
 export default function Contactform() {
+
     const [formData, setformData] = React.useState(
         {
-            name: "",  
-            email: "",
-            subject: "", 
+            user_name: "",  
+            user_email: "", 
+            subject: "",
             message: ""
         }
     )
@@ -23,24 +23,39 @@ export default function Contactform() {
                 [name]: type === "checkbox" ? checked : value
             }
         })
-    }
+    };
 
-    function handleSubmit(event) {
-        event.preventDefault()
-        console.log(formData)
-    }
+    const form = useRef();
 
-    const navRef = useRef();
+    const sendEmail = (e) => {
+      e.preventDefault();
+  
+      emailjs
+        .sendForm('service_qbqm2e6', 
+                    'template_1w4yql9', 
+                    form.current, 
+                    'rm2ZaUMW7RRk64R7B')
+        .then((result) => {
+            console.log(result.text);
+            console.log("Message successfully sent.")
+        }, (error) => {
+            console.log(error.text);
+            console.log("There is error! Please retry.");
+            alert("Message Sent")
+        }
+        );
+        e.target.reset();
+    };
 
-    const showLinksbar = () => {
-        navRef.current.classList.toggle("responsive_nav");
-    }
+    //  function handleSubmit(event) {
+    //     event.preventDefault()
+    //      console.log(formData)
+    //  }
 
     return (
-<div>
-        <div className="contact-info"> 
-            <form onSubmit={handleSubmit} className="contact-form">
-                <div  className="contact-words">
+        <div className="form-container">
+            
+                <form ref={form} onSubmit={sendEmail} className="contact-form">
                     <h1>Contact Us</h1>
                     <h3>
                         <li>Why can't you contact Us. We are here for you.</li> 
@@ -49,40 +64,47 @@ export default function Contactform() {
                         <li>Any doubts we are here to clear them all.</li> 
                         <li>Just contact us and in no time we will be in touch with you.</li>    
                     </h3>
-                </div>
-                    <div className="contact-input">
+                    
+                    <div className="contact-input">  
+                        <label className="contact-name-label">Enter Your Name:</label>
                         <input
                             type="text"
                             placeholder="Name"
                             onChange={handleChange}
-                            name="name"
+                            name="user_name"
                             value={formData.name}
                             required
                         />
                     </div>
 
-                    <div className="contact-input">
+                    <div className="contact-inputs ">
+                        
+                        <label className="contact-email-label">Enter Your Email:</label>
                         <input
                             type="email"
-                            placeholder="email"
+                            placeholder="example@gmail.com"
                             onChange={handleChange}
-                            name="email"
+                            name="user_email"
                             value={formData.email}
                             required
                         />
                     </div>
-                
+
                     <div className="contact-input">
-                        <textarea 
+                        
+                        <label className="contact-subject-label">Enter Your Email subject:</label>
+                        <input 
                             value={formData.subject}
-                            placeholder="Subject"
+                            placeholder="Email Subject"
                             onChange={handleChange}
                             name="subject"
                             required
                         />
                     </div>
 
-                    <div className="contact-input">
+                    <div className="contact-input contact-message">
+                        
+                        <label className="contact-message-label">Type your message:</label>
                         <textarea 
                             value={formData.message}
                             placeholder="Your Message"
@@ -91,44 +113,16 @@ export default function Contactform() {
                             required
                         />
                     </div>
-                    <button className="contact-btn">SUBMIT</button>
-            </form> 
-                              
-                <div className="contact-img">
-                    <img src={require('../../images/contactUs.jpg')} alt="The team"/>
-                </div>
-     </div>
+                    <div className="contact-btn">
+                        <button >SUBMIT</button>
+                    </div> 
+                </form>
                 
-                    <div className="contact-location" ref={navRef}>
-                        <div className="contact-type">
-                            <button className="contact-link-btn" onClick={showLinksbar}>
-                                <AiFillEnvironment/>
-                            </button>
-                            <span className="contact-btn-p"><b>Address:</b> 04 Ring road Haidian Beijing, China</span>
-                        </div>
-                        <div className="contact-type">
-                            <button className="contact-link-btn" onClick={showLinksbar}>
-                                <HiPhone/>          
-                            </button>
-                            <span className="contact-btn-p"><b>Phone:</b>+86 18810151613</span>
-                        </div>
-                        <div className="contact-type">
-                            <button className="contact-link-btn" onClick={showLinksbar}>
-                                <HiMail/>
-                            </button>  
-                            <span className="contact-btn-p"><b>Email:</b> info@globalmetaroyale.com</span>
-                        </div>
-                        <div className="contact-type">
-                            <button className="contact-link-btn" onClick={showLinksbar}>
-                                <FaGlobeAsia/>
-                            </button>  
-                            <span className="contact-btn-p"><b>Our Website:</b> www.globalmetaroyale.com</span>
-                        </div>
-                                
-                    </div>
-               
-
-        
-    </div>
+            <div className="contact-img">
+                <img src={require('../../images/contactUs.jpg')} alt="The team"/>
+                
+            </div>
+            
+        </div>
     )
 }

@@ -1,0 +1,66 @@
+
+.contact-location {
+	display: flex;
+	align-items: center;
+	justify-content:space-around;
+	flex-wrap: wrap;
+}
+
+.contact-location .contact-type {
+	display: flex;
+	flex-direction: column;
+	//width: calc(100%/2 - 15px);
+	//margin: 4px 0;
+
+}
+
+
+
+.contact-type button {
+    display: flex;
+    cursor: pointer;
+    background: rgb(40, 8, 40);
+    width: 7rem;
+    height: 7rem;
+    border-radius: 50%;
+    border: black;
+    color: goldenrod;
+    margin: 1rem auto;
+    font-size: 3.5rem;
+    align-items: center;
+    justify-content: center;
+    
+    }
+
+.contact-type label {
+font-family: var(--font-family);
+padding: .1rem 1rem 1rem 1rem;
+margin-bottom: 0.2rem;
+align-items: center;
+
+}
+
+///Media display
+
+@media only screen and (max-width:800px) {
+    .contact-location .contact-type {
+        display: flex;
+        flex-direction: column;
+        width: calc(100%/2 - 15px);
+    
+    }
+
+    .contact-type label {
+        text-align: center;
+        
+        }
+  
+}
+
+@media screen and (max-width: 700px) {
+    .contact-location {
+        .contact-link-btn {
+        margin-left: 40px;
+        }
+    }
+}

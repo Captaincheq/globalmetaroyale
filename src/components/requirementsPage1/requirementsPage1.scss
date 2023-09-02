@@ -1,0 +1,106 @@
+
+.r-main{
+  flex: 1;
+}
+
+.rp-header {
+  align-items: center;
+  text-align: center;
+  margin: 2rem;
+  padding: 2rem;
+  font-size: 6rem;
+  cursor: pointer;
+  border-radius: 9rem;
+  //background-color: var(--button);
+    --b: 0.1em;   /* the thickness of the line */
+    --c: var(--color-subtext); /* the color */
+    color: var(--color-subtext);
+    //color: #0000;
+    padding-block: var(--b);
+    background: 
+      linear-gradient(var(--c) 50%,#000 0) 0% calc(100% - var(--_p,0%))/100% 200%,
+      linear-gradient(var(--c) 0 0) 0% var(--_p,0%)/var(--_p,0%) var(--b) no-repeat;
+    -webkit-background-clip: text,padding-box;
+            background-clip: text,padding-box;
+    transition: .3s var(--_s,0s) linear,background-size .3s calc(.3s - var(--_s,0s));
+  }
+  .rp-header:hover {
+    --_p: 100%;
+    --_s: .3s;
+    color: var(--color-text);
+  }
+
+
+.requirementPage1-container {
+  display: flex;
+  flex-direction: row;
+  margin: 2rem;
+  margin-top: 7rem;
+}
+
+.requirements-content {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem;
+  width: 50%;
+  background-color: var(--color-bg);
+}
+
+  .rp{
+    display: flex;
+    background-color: var(--background-front);
+    border-radius: 4rem;
+    margin: 0.5rem;
+  }
+
+    .requirementsinfo-p {
+      font-family: var(--font-family);
+      font-size: 12px;
+      line-height: 14px;
+      align-items: center;
+      padding: 1rem;
+      margin-left: 1rem;
+      color: var(--color-shady);
+
+      .Rminor{
+        color: var(--color-subtext);
+      }
+    }
+
+.expected-content {
+  display: flex;
+  flex-direction: column;
+  margin: .5rem;
+  width: 50%;
+  background-color: var(--color-bg);
+}
+
+.rp-h1{
+  box-sizing: border-box;
+  font-family: var(--font-family);
+  color: var(--color-text);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 21px;
+  word-spacing: 4px;
+  margin-bottom: 2rem 0 2rem 0;
+  padding: 2rem;
+  align-items: center;
+  text-align: center;
+  text-decoration-line:underline;
+}
+
+
+@media  screen and  (max-width: 500px) {
+  .requirementPage1-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .requirements-content {
+    width: 100%;
+  } 
+  .expected-content {
+    width: 100%;
+  }
+}

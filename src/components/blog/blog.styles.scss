@@ -1,6 +1,8 @@
 .blog{
     display: flex;
     flex-direction: column;
+    margin-top: 7rem;
+    color: var(--color-shady);
 }
 
 .blog-heading {
@@ -15,8 +17,8 @@
     font-weight: 800;
     font-size: 62px;
     line-height: 75px;
-
     letter-spacing: -0.04rem;
+    color: var(--color-shady);
 }
 
 .blog-container {
